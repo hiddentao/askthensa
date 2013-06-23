@@ -71,7 +71,6 @@ var triggers = [
   {
     keys: ['telephone', 'tel'],
     result: function() {
-
       outputLine(
         randomPick([
           'Networking with <a href="http://news.cnet.com/8301-13578_3-57590364-38/nsa-can-eavesdrop-on-americans-phone-calls-documents-show/" target="_blank">Verizon, Sprint and AT & T</a> for your records...',
@@ -95,6 +94,21 @@ var triggers = [
       randomPick([
         'Asking <a target="_blank" href="http://www.nydailynews.com/news/world/british-agency-repeatedly-hacked-foreign-diplomats-report-article-1.1374618">GCHQ</a> for eavesdropping data on ' + key + '...'
       ])
+    }
+  },
+  {
+    keys: ['snowden'],
+    result: function(key) {
+      outputLine('Trigger keyword detected: SNOWDEN');
+      _.delay(function() {
+        outputLine('[TERMIN8] Calculating your geo-coordinates...');
+        _.delay(function() {
+          outputLine('[TERMIN8] Informing the CIA and JSOC of your location...');
+          _.delay(function() {
+            outputLine('[TERMIN8] Drone launched and heading your way...');
+          }, 3000);
+        }, 3000);
+      }, 3000);
     }
   }
 
@@ -120,28 +134,21 @@ require(['underscore', 'jquery'], function(_, $) {
       jqOutput = $('#output');
 
     jqInput.keyup(function() {
-      var text = jqInput.val();
-      var caretPos = getCaret(jqInput.get(0));
+      var text = jqInput.val().toLowerCase();
 
       _.each(triggers, function(trigger) {
+        if (trigger['done']) return;
+
         _.each(trigger.keys, function(key) {
-
-          if (key.toLowerCase() === text.substr(caretPos - key.length, key.length).toLowerCase()) {
-            if (!trigger['done']) {
-              trigger.result.call(null, key);
-              trigger['done'] = true;
-            }
+          if (0 <= text.indexOf(key)) {
+            trigger.result.call(null, key);
+            trigger['done'] = true;
           }
-
         });
       });
     });
 
     // launch
     trackIP();
-    _.delay(function() {
-      jqOutput.append('Calculating your geo-coordinates: ');
-    }, 3000);
-
   });
 });
