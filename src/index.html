@@ -14,15 +14,54 @@
 </head>
 <body>
 
-  <label for="input">What do you want?</label>
-  <textarea id="input" rows="2" cols="80" placeholder="Enter your question"></textarea>
+  <div id="wrapper">
 
-  <div id="output"></div>
+    <a id="logo" href="">NSA</a>
 
+    <div class="content_box">
+      <h1>What We Do</h1>
+      <p>
+        The NSA Community Outrearch Progam is an initiative undertaken to give the public access to provide the public with timely
+        information about your most private data.
+      </p>
+
+      <br />
+
+      <h1>We'll Help Track Your</h1>
+
+      <ul>
+        <li>Passwords You've Forgotten</li>
+        <li></li>
+        <li>A third bit of crap</li>
+        <li>A third bit of crap</li>
+      </ul>
+
+    </div>
+
+    <form id="ask_the_nsa" action="" method="POST" class="content_box">
+      <label for="input">Let Us Help You</label>
+      <p>Use the box below to retreive your data from the NSA's database</p>
+      <input id="input" name="input" type="text" placeholder="Type Your Search" />
+    </form>
+
+    <div id="output" class="content_box">
+
+      <!-- I get hidden when the first result is returned -->
+      <div id="hideme">Your Results</div>
+
+      <!-- We start to show up when results are returned -->
+      <div class="result">This is a result</div>
+      <div class="result">This is a result</div>
+      <div class="result">This is a result</div>
+      <div class="result">This is a result</div>
+
+    </div>
+
+  </div> <!-- /#wrapper -->
 
   <footer>
     <p>Built by the true American heroes at the NSA.</p>
-    <p class="disclaimer">Disclaimer: All names and locations are purely fictional and any resemblance to reality is purely co-incidental.</p>
+    <p id="disclaimer">Disclaimer: All names and locations are purely fictional and any resemblance to reality is purely co-incidental.</p>
   </footer>
 
   <script>

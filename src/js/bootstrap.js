@@ -8,7 +8,6 @@
   }
 });
 
-
 /** From http://stackoverflow.com/questions/263743/how-to-get-caret-position-in-textarea */
 function getCaret(el) {
   if (el.selectionStart) {
