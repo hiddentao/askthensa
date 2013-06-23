@@ -1,7 +1,14 @@
 @import "compass";
 
 #output {
-  p {
+  iframe {
+    display: block;
     margin: 0;
+    padding: 0;
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
   }
 }
