@@ -1,0 +1,10 @@
+{
+  "name": "askthensa",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "jquery": "=2.0.2",
+    "lodash": "=1.2.1"
+  },
+  "devDependencies": {}
+}

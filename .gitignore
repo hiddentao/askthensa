@@ -1,0 +1,15 @@
+# output
+.tmp
+
+# bower
+src/components
+
+# npm
+node_modules
+
+# compass
+.sass-cache
+
+# IDE
+*.iml
+.idea
