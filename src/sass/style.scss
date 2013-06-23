@@ -138,10 +138,22 @@ label {
 #hideme {
     color: #D00;
 }
-.result {
-    padding: 20px 0;
-    font-size: 16px;
-    border-bottom: 1px dashed #aaa;
+#output {
+    .result {
+        padding: 20px 0;
+        font-size: 16px;
+        border-bottom: 1px dashed #aaa;
+    }
+    iframe {
+      display: block;
+      margin: 0;
+      padding: 0;
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    }
 }
 
 // #### DISCLAIMER #######################
