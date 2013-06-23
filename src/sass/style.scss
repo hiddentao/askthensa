@@ -1,24 +1,152 @@
 @import "compass";
 
+// #### CSS RESET #######################
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
 body {
-    background: #265d86 url(img/nsa_bg);
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+// #### STUFF #######################
+
+body {
+    background: #265d86 image-url('nsa_bg.jpg');
     font-family: Verdana, Arial, Helvetica, sans-serif;
     margin: 0;
+    font-size: 13px;
+    color: #000;
+    line-height: 15px;
 }
 #wrapper {
-    width: 800px;
+    width: 900px;
     margin: 0 auto;
 }
-#header_explanation  {
+#logo {
+    margin: 0 auto;
+    display: block;
+    background: image-url('nsa_logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 836px;
+    height: 225px;
+    text-transform: uppercase;
+    text-indent: -9999em;
+}
+h1,
+label {
+    color: #205d89;
+    font-size: 18px;
     text-align: center;
+    display: block;
+    background: image-url('h1_bg.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.content_box  {
+    text-align: center;
+    @include background-image(linear-gradient(left top, #d9d9d9, white));
+    padding: 15px;
+    @include single-box-shadow(#fff, 0, 1px, 1px, 2px, true);
+    margin: 10px auto;
 
-    #logo {
-        background: url(img/nsa_logo.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 225px;
-        height: 225px;
-        text-transform: uppercase;
-        text-indent: -9999em;
+    p {
+        margin-bottom: 10px;
+        clear: both;
     }
+
+    ul {
+        margin: 10px 0;
+
+        li {
+            background: image-url('li.png');
+            background-repeat: no-repeat;
+            background-position: left center;
+            list-style-type: none;
+            padding: 0 20px;
+            text-align: left;
+            display: inline;
+        }
+    }
+}
+#ask_the_nsa {
+    overflow: hidden;
+
+    input[type=text] {
+        height: 40px;
+        padding: 0 15px;
+        width: 710px;
+        float: left;
+        border: 1px solid #fff;
+        @include single-box-shadow(rgba(0,0,0,0.3), 0, 1px, 3px, 2px, true);
+        color: #D00;
+    }
+    input[type=submit] {
+        cursor: pointer;
+        width: 120px;
+        float: right;
+        border: 1px solid #030408;
+        color: #fff;
+        font-size: 16px;
+        text-transform: uppercase;
+        @include background-image(linear-gradient(top, #8797a7, #235b96));
+        height: 40px;
+    }
+}
+
+// #### SEARCH RESULTS #######################
+
+#hideme {
+    color: #D00;
+}
+.result {
+    padding: 20px 0;
+    font-size: 16px;
+    border-bottom: 1px dashed #aaa;
+}
+
+// #### DISCLAIMER #######################
+#disclaimer {
+    color: #71A2C3;
+    text-align: center;
+    margin: 30px 0;
 }

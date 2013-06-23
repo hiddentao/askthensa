@@ -14,6 +14,6 @@ require(['jquery'], function($) {
   $(function() {
     'use strict';
 
-    alert('ok!');
+    //alert('ok!');
   });
 });
