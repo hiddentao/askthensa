@@ -80,20 +80,26 @@ var triggers = [
     }
   },
   {
-    keys: ['internet', 'gchq'],
+    keys: ['internet', 'gchq', 'surveillance'],
     result: function() {
-      randomPick([
-        'Contacting GCHQ to share <a href="http://www.guardian.co.uk/uk/2013/jun/21/gchq-mastering-the-internet" target="_blank">Mastering the Internet</a> data...',
-        'Accessing Skynet database...'
-      ])
+      outputLine(
+        randomPick([
+          'Contacting GCHQ to share <a href="http://www.guardian.co.uk/uk/2013/jun/21/gchq-mastering-the-internet" target="_blank">Mastering the Internet</a> data...',
+          'Accessing Skynet database...',
+          'Loading hacked transcontinental cable data...'
+        ])
+      );
     }
   },
   {
     keys: ['russia', 'south africa'],
     result: function(key) {
-      randomPick([
-        'Asking <a target="_blank" href="http://www.nydailynews.com/news/world/british-agency-repeatedly-hacked-foreign-diplomats-report-article-1.1374618">GCHQ</a> for eavesdropping data on ' + key + '...'
-      ])
+      var country = key.substr(0,1).toUpperCase() + key.substr(1);
+      outputLine(
+        randomPick([
+          'Asking GCHQ for <a target="_blank" href="http://www.nydailynews.com/news/world/british-agency-repeatedly-hacked-foreign-diplomats-report-article-1.1374618">eavesdropping</a> data on ' + country + '...'
+        ])
+      );
     }
   },
   {
