@@ -8,7 +8,6 @@
   }
 });
 
-
 /** From http://stackoverflow.com/questions/263743/how-to-get-caret-position-in-textarea */
 function getCaret(el) {
   if (el.selectionStart) {
@@ -116,9 +115,6 @@ require(['underscore', 'jquery'], function(_, $) {
   $(function() {
     'use strict';
 
-<<<<<<< HEAD
-    //alert('ok!');
-=======
     jqInput = $('#input'),
       jqOutput = $('#output');
 
@@ -146,6 +142,5 @@ require(['underscore', 'jquery'], function(_, $) {
       jqOutput.append('Calculating your geo-coordinates: ');
     }, 3000);
 
->>>>>>> 5148c7eb9be7e18fb34ca5965ff17d8d19b8245f
   });
 });

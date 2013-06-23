@@ -114,22 +114,11 @@ label {
     input[type=text] {
         height: 40px;
         padding: 0 15px;
-        width: 710px;
+        width: 835px;
         float: left;
         border: 1px solid #fff;
         @include single-box-shadow(rgba(0,0,0,0.3), 0, 1px, 3px, 2px, true);
         color: #D00;
-    }
-    input[type=submit] {
-        cursor: pointer;
-        width: 120px;
-        float: right;
-        border: 1px solid #030408;
-        color: #fff;
-        font-size: 16px;
-        text-transform: uppercase;
-        @include background-image(linear-gradient(top, #8797a7, #235b96));
-        height: 40px;
     }
 }
 
@@ -157,8 +146,16 @@ label {
 }
 
 // #### DISCLAIMER #######################
-#disclaimer {
-    color: #71A2C3;
+
+footer   {
     text-align: center;
     margin: 30px 0;
+    p {
+        margin: 10px 0;
+    }
+
+    #disclaimer {
+        color: #71A2C3;
+        text-align: center;
+    }
 }
