@@ -1,5 +1,24 @@
 @import "compass";
 
 body {
-  margin: 0;
+    background: #265d86 url(img/nsa_bg);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+#wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+#header_explanation  {
+    text-align: center;
+
+    #logo {
+        background: url(img/nsa_logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 225px;
+        height: 225px;
+        text-transform: uppercase;
+        text-indent: -9999em;
+    }
 }
