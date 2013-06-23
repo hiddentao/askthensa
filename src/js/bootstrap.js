@@ -185,7 +185,7 @@ var defaultTasks = function() {
         _.delay(function() {
           outputLine('NDAA violation: you appear to be an Al Qaeda <a href="http://digitaljournal.com/article/321389" target="_blank">associated force</a>...');
           _.delay(function() {
-            outputLine('You have been added to the FBI most-wanted list.');
+            outputLine('<em>You have been added to the FBI most-wanted list.</em>');
           }, 2000);
         }, 2000);
       }, 2000);

@@ -119,6 +119,11 @@ label {
         a {
           color: #D00;
         }
+
+        em {
+          font-size: 140%;
+          font-weight: bold;
+        }
     }
     iframe {
       display: block;
@@ -135,7 +140,6 @@ label {
     }
 
     &.error {
-      background-color: #000;
       padding: 2em;
       color: #D00;
       font-weight: bold;
@@ -156,5 +160,10 @@ footer   {
     #disclaimer {
         color: #71A2C3;
         text-align: center;
+    }
+
+    a {
+      color: #000;
+      text-decoration: underline;
     }
 }
