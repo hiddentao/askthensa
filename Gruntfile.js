@@ -214,19 +214,15 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('server', function (target) {
-        if (target === 'build') {
-            return grunt.task.run(['build', 'connect:build:keepalive']);
-        }
+    grunt.renameTask('regarde', 'watch');
 
-        grunt.task.run([
-            'clean:server',
-            'compass:server',
-            'livereload-start',
-            'connect:livereload',
-            'watch'
-        ]);
-    });
+    grunt.registerTask('server', [
+        'clean:server',
+        'compass:server',
+        'livereload-start',
+        'connect:livereload',
+        'watch'
+    ]);
 
     grunt.registerTask('build', [
         'clean:build',
