@@ -110,12 +110,12 @@ require(['underscore', 'jquery', 'countries'], function(_, $, countries) {
       }
     },
     {
-      keys: ['internet', 'web', 'gchq', 'surveillance', 'wifi'],
+      keys: ['internet', 'web', 'gchq', 'surveillance', 'wifi', 'prism'],
       result: function() {
         outputLines([
           'Contacting GCHQ to share <a href="http://www.guardian.co.uk/uk/2013/jun/21/gchq-mastering-the-internet" target="_blank">Mastering the Internet</a> data...',
-          'Accessing Skynet database...',
-          'Loading hacked transcontinental cable data...',
+          'Accessing <a href="http://www.guardian.co.uk/world/2013/jun/22/nsa-leaks-britain-us-surveillance" target="_blank">Five Eyes</a> database...',
+          'Loading hacked <a href="http://www.guardian.co.uk/uk/2013/jun/21/gchq-cables-secret-world-communications-nsa" target="_blank">transcontinental cable</a> data...',
           'Filtering for packets related to you...',
           'Cross-referencing against your browser history...',
           'Filtering out porn (70% size reduction)...',
@@ -221,6 +221,10 @@ require(['underscore', 'jquery', 'countries'], function(_, $, countries) {
   $(function() {
     'use strict';
 
+    $('form').submit(function(e) {
+      e.preventDefault();
+    });
+
     jqInput = $('#input'),
       jqOutput = $('#output');
 
@@ -240,7 +244,7 @@ require(['underscore', 'jquery', 'countries'], function(_, $, countries) {
           }
         });
 
-        if (!doneOne && 10 < text.length) {
+        if (!doneOne && 20 < text.length) {
           doneOne = true;
           defaultTasks();
         }
