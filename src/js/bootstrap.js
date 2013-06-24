@@ -145,64 +145,66 @@ require(['underscore', 'jquery', 'countries'], function(_, $, countries) {
     {
       keys: ['manning'],
       result: function(key) {
-        outputLine('Trigger keyword detected: MANNING (category: terrorist)', 2000, function() {
-          outputLine('[BAUER] Calculating your geo-coordinates...', 2000, function() {
-            outputLine('[BAUER] Taking over your bank accounts and assets...', 2000, function() {
-              outputLine('[BAUER] Dispatching Cheney to your location...', 2000);
-            });
-          });
-        });
+        outputLines(
+          [
+            'Trigger keyword detected: MANNING (category: terrorist)',
+            '[ECHELON] Calculating your geo-coordinates...',
+            '[ECHELON] Taking over your bank accounts and assets...',
+            '[ECHELON] Dispatching Cheney to your location...',
+            '<em>Terrorists terminated today: ' + _.random(1, 30) + '</em>'
+          ]
+        );
       }
     },
     {
       keys: ['greenwald'],
       result: function(key) {
-        outputLine('Trigger keyword detected: GREENWALD (category: extremist)', 2000, function() {
-          outputLine('[TREADSTONE] Calculating your geo-coordinates...', 2000, function() {
-            outputLine('[TREADSTONE] Informing JSOC of your location...', 2000, function() {
-              outputLine('[TREADSTONE] Dispatching SEAL Team 6 (good luck!)...', 2000);
-            });
-          });
-        });
+        outputLines(
+          [
+            'Trigger keyword detected: GREENWALD (category: extremist)',
+            '[TREADSTONE] Calculating your geo-coordinates...',
+            '[TREADSTONE] Informing JSOC of your location...',
+            '[TREADSTONE] Dispatching SEAL Team 6 (good luck!)...',
+            '<em>Journalists terminated today: ' + _.random(1, 30) + '</em>'
+          ]
+        );
       }
     },
     {
-      keys: ['snowden', 'hong kong'],
+      keys: ['snowden'],
       result: function(key) {
-        outputLine('Trigger keyword detected: SNOWDEN (category: traitor)', 2000, function() {
-          outputLine('[TERMIN8] Calculating your geo-coordinates...', 2000, function() {
-            outputLine('[TERMIN8] Informing the CIA of your location...', 2000, function() {
-              outputLine('[TERMIN8] Drone dispatched and heading your way.', 2000);
-            });
-          });
-        });
+        outputLines([
+          'Trigger keyword detected: SNOWDEN (category: traitor)',
+          '[TERMIN8] Informing the CIA of your location...',
+          '[TERMIN8] Calculating your geo-coordinates...',
+          '[TERMIN8] Drone dispatched and heading your way...',
+          '<em>Traitors terminated today: ' + _.random(1, 30) + '</em>'
+        ]);
       }
     }
   ];
 
 
   var defaultTasks = function() {
-    outputLine('Tracking your IP: <iframe id="iptracker" src="ip.html" seamless="seamless"/>', 2000, function() {
-      outputLine('We are now tracking you via a dedicated satellite...', 2000, function() {
-        outputLine('Accessing your bank accounts and tax history...', 2000, function() {
-          outputLine('Analyzing your call history for suspicious contacts...', 2000, function() {
-            outputLine('NDAA violation: you appear to be an Al Qaeda <a href="http://digitaljournal.com/article/321389" target="_blank">associated force</a>...', 2000, function() {
-              outputLine('<em>You have been added to the FBI most-wanted list.</em>', 2000);
-            });
-          });
-        });
-      });
-    });
+    outputLines([
+      'Tracking your IP: <iframe id="iptracker" src="ip.html" seamless="seamless"/>',
+      'We are now tracking you via a dedicated satellite...',
+      'Accessing your bank accounts and tax history...',
+      'Analyzing your call history for suspicious contacts...',
+      'NDAA violation: you appear to be an Al Qaeda <a href="http://digitaljournal.com/article/321389" target="_blank">associated force</a>...',
+      '<em>You have been added to the FBI most-wanted list.</em>'
+    ], 2000);
   };
 
 
-  var outputLines = function(lines) {
+  var outputLines = function(lines, delay) {
+    if (!delay) delay = 1000;
     var current = 0;
     var _outputLineFunc = null;
 
     (_outputLineFunc = function() {
       if (lines.length <= current) return;
-      outputLine(lines[current], 1000, function() {
+      outputLine(lines[current], delay, function() {
         current++;
         _outputLineFunc();
       });
