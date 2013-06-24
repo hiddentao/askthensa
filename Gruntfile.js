@@ -234,8 +234,8 @@ module.exports = function (grunt) {
         'imagemin',
         'concat',
         'cssmin',
-        'copy',
         'uglify',
+        'copy',
         'usemin',
         'htmlmin'
     ]);
